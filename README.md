@@ -165,9 +165,9 @@ python main.py:-
 
 5.Click on My Files, then you will be navigated to your Home Directory.
 
-6. Open a new linux terminal and clone this repo
+6.Open a new linux terminal and clone this repo
 
-7.Navigate to the downloaded code and open computer-controller_intel_dev_cloud.ipynb from src directory
+7.Navigate to the downloaded code and open computer-controller_intel_dev_cloud.ipynb
   
 ## Benchmarks
 I have run the model on 4 Intel hardware
