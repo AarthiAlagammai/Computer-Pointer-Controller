@@ -121,4 +121,56 @@ python main.py:-
 
 -flags (optional) : Specify the flags from fd, fld, hp, ge if you want to visualize the output of corresponding models of each frame (write flags with space seperation. Ex:- -flags fd fld hp).
 
+## Directory Structure:
+1.requirements.txt - Requirements required to run this project
+
+2.src/
+
+	a.face_detection.py
+		Contains preprocessing of input video frame and perform inference on the frame.Detect face from the frame and process the output
+    
+ 	b. facial_landmarks_detection.py
+		Takes the face detected from face_detection.py and perform inference on it and finds the eye landmarks and process the output
+    
+	c.head_pose_estimation.py
+		Takes the face detected from face_detection.py and perform inference on it and finds the roll,pitch,yaw angles of the head position and porcess the output
+    
+	d.gaze_estimation.py
+		Takes the head position and left_eye and right_eye coordinates and perform inference on it and finds the gaze vector 
+    
+	e.input_feeder.py
+		Input feeder for implementing iteration over input frames
+    
+	f.mouse_controller.py
+		Contains MouseController class which take x, y coordinates value, speed, precisions and according these values it moves the mouse pointer by using pyautogui library
+    
+3.main.py
+		Main script which binds all the pipelines together
+    
+4. resources/
+	demo.mp4: It is the Input video for the project .We can use webcam also
+  
+## Benchmarks
+I have run the model on 4 Intel hardware
+
+1.Intel Core i5-6500TE CPU-https://ark.intel.com/content/www/us/en/ark/products/88186/intel-core-i5-6500te-processor-6m-cache-up-to-3-30-ghz.html
+
+2.Intel Core i5-6500TE GPU- https://ark.intel.com/products/88186/Intel-Core-i5-6500TE-Processor-6M-Cache-up-to-3-30-GHz-
+
+3.IEI Mustang F100-A10 FPGA- https://www.ieiworld.com/mustang-f100/en/
+
+4.Intel VPU NCS2-https://software.intel.com/en-us/neural-compute-stick
+
+The following are the results of different hardware with different precision levels
+
+## FP32
+
+  ### Inference Time
+        ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_inference_time.png)
+
+  
+  
+
+
+
 
