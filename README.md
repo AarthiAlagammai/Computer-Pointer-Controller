@@ -50,9 +50,10 @@ Computer pointer controller app is used to control the mouse pointer of the comp
 Open a new terminal and run the following commands:-
 
 1. Change the directory to src directory of project repository
+  ```
+  cd <project-repo-path>/src
    ```
-    cd <project-repo-path>/src
-     ```
+   
 2. Run the main.py file(CPU)
   ```
   python main.py -f <Path of xml file of face detection model> \
@@ -79,3 +80,5 @@ If you want to run app on FPGA:-
   -i <Path of input video file or enter cam for taking input video from webcam> 
   -d HETERO:FPGA,CPU
    ```
+### NOTE:
+If you get Unsupported media format error, then it means that C:\Program Files (x86)\IntelSWTools\openvino_2020.2.117\opencv\bin does not contain opencv_videoio_ffmpeg430_64.dll and some other dll file that we need to run inference on the demo video. Then you will find ffmpeg-download file(C:\Program Files (x86)\IntelSWTools\openvino_2020.2.117\opencv) in this path. Run this file with powershell and you issue will be resolved
