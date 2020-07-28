@@ -166,7 +166,8 @@ The following are the results of different hardware with different precision lev
 ## FP32
 
   ### Inference Time
-        ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_inference_time.png)
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_inference_time.png)
 
   
   
