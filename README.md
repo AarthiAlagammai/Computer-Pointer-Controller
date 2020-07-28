@@ -126,7 +126,7 @@ python main.py:-
 
 2.src/
 
-	a.face_detection.py
+       a.face_detection.py
 		Contains preprocessing of input video frame and perform inference on the frame.Detect face from the frame and process the output
     
  	b. facial_landmarks_detection.py
@@ -145,10 +145,26 @@ python main.py:-
 		Contains MouseController class which take x, y coordinates value, speed, precisions and according these values it moves the mouse pointer by using pyautogui library
     
 3.main.py
-		Main script which binds all the pipelines together
-    
+	Main script which binds all the pipelines together
 4. resources/
-	demo.mp4: It is the Input video for the project .We can use webcam also
+      demo.mp4: It is the Input video for the project .We can use webcam also
+	
+
+## Run this application on intel dev cloud
+
+1.Log in to the Intel® DevCloud
+
+2.Sign into the Intel DevCloud account with your credentials from [here](https://software.intel.com/content/www/us/en/develop/tools/devcloud/edge.html)
+
+3.If you are new user, Register into the Intel DevCloud account from [here](https://inteliotgnew.secure.force.com/devcloudsignup)
+
+4.In home page, Under "Advanced Tab", Click on "Connect and Create"
+
+5.Click on My Files, then you will be navigated to your Home Directory.
+
+6. Open a new linux terminal and clone this repo
+
+7.Navigate to the downloaded code and open computer-controller_intel_dev_cloud.ipynb from src directory
   
 ## Benchmarks
 I have run the model on 4 Intel hardware
@@ -168,8 +184,48 @@ The following are the results of different hardware with different precision lev
   ### Inference Time
   
   ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_inference_time.png)
-
   
+  ### Frames per Second
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_frames_ps.png)
+  
+  ### Model Load Time
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp32_model_load__time.png)
+  
+  
+
+  ## FP16
+
+  ### Inference Time
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp16_inference_time.png)
+  
+  ### Frames per Second
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp16_frames_ps.png)
+  
+  ### Model Load Time
+  
+  ![Sample Output Image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/fp16_model_load__time.png)
+  
+  
+ ## Results
+As we can see from the above graphs the model running with more FP32 precision takes a little longer time comapred to FP16.And FPGA took more time for inference than other device because it programs each gate of fpga for compatible for this application. It can take time but there are advantages of FPGA such as:
+
+1.Longer lifespan
+
+2.More robust compared to other devices
+It is robust meaning it is programmable per requirements unlike other hardwares.
+After running models with different precision, we can see that precision affects the accuracy. Lowering precision leads to reduction in model size which inturn reduces inference time whereas a trade off occurs in the accuracy of the model.## Stand Out Suggestions
+This is where you can provide information about the stand out suggestions that you have attempted.
+
+
+### Edge Cases
+
+1.If there are multiple people present in a frame it takes the face of the first detected person and changes the mouse pointer accordingly
+
+2.Lighting also plays an important role.If there is no proper lighting the application couldnot detect a face and the application terminates
   
 
 
