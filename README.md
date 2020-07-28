@@ -4,6 +4,9 @@ Computer pointer controller app is used to control the mouse pointer of the comp
 
 ## Architecture Diagram
 
+![Pipeline_image](https://github.com/AarthiAlagammai/Computer-Pointer-Controller/blob/master/resources/pipeline.png)
+
+
 ## Setup and Installation
 
   ### Openvino installation:
